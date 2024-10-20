@@ -4,11 +4,16 @@ import Image from 'next/image';
 import { AiOutlineMenu, AiOutlineDown } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { UserButton } from '@clerk/nextjs';
+
 
 const logo = true;
 
 const ManagementNavbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    //check if user is logged in
+    const userLoggedIn = true;
 
 
     const toggleMobileMenu = () => {
@@ -59,10 +64,26 @@ const ManagementNavbar = () => {
 
             {/* Right Section: Log in and Try it Free (Desktop) */}
             <div className="hidden md:flex items-center gap-4 md:gap-6">
-                <Link href="#" className="text-[#1a2727] text-[15px] font-medium leading-tight">Log in</Link>
-                <div className="px-[14px] py-2 bg-[#b7e0de] rounded-xl md:px-[18px] md:py-2 flex items-center justify-center">
-                    <Link href="#" className="text-[#010303] text-[15px] font-medium leading-tight">Try it free</Link>
-                </div>
+                {userLoggedIn ? (
+                    <UserButton
+                        appearance={{
+                            elements: {
+                                userButtonAvatarBox: {
+                                    width: '42px',
+                                    height: '42px',
+                                },
+                            },
+                        }}
+                    />
+                ) : (
+                    <Fragment>
+                        <Link href="#" className="text-[#1a2727] text-[15px] font-medium leading-tight">Log in</Link>
+                        <div className="px-[14px] py-2 bg-[#b7e0de] rounded-xl md:px-[18px] md:py-2 flex items-center justify-center">
+                            <Link href="#" className="text-[#010303] text-[15px] font-medium leading-tight">Try it free</Link>
+                        </div>
+                    </Fragment>
+                )
+                }
             </div>
 
             {/* Hamburger Icon (Mobile View) */}
@@ -99,8 +120,15 @@ const ManagementNavbar = () => {
 
                     {/* Log in and Try it Free for Mobile */}
                     <div className="w-full border-t mt-4 pt-4 flex flex-col gap-6">
-                        <Link href="#login" className="text-[#1a2727] text-[16px] font-medium leading-tight px-[14px] py-2 bg-[#30736F]/10 rounded-xl flex items-center justify-center hover:bg-[#30736F]/20">Log in</Link>
-                        <Link href="#signup" className="text-[#010303] text-[16px] font-medium leading-tight px-[14px] py-2 bg-[#b7e0de]/90 rounded-xl flex items-center justify-center hover:bg-[#b7e0de]">Try it free</Link>
+                        {userLoggedIn ? (
+                            <UserButton />
+                        ) : (
+                            <Fragment>
+                                <Link href="#login" className="text-[#1a2727] text-[16px] font-medium leading-tight px-[14px] py-2 bg-[#30736F]/10 rounded-xl flex items-center justify-center hover:bg-[#30736F]/20">Log in</Link>
+                                <Link href="#signup" className="text-[#010303] text-[16px] font-medium leading-tight px-[14px] py-2 bg-[#b7e0de]/90 rounded-xl flex items-center justify-center hover:bg-[#b7e0de]">Try it free</Link>
+                            </Fragment>
+
+                        )}
                     </div>
                 </motion.div>
             )}
