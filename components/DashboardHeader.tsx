@@ -1,7 +1,6 @@
 import React from 'react';
 import ShareButton from './ShareButton';
 import TeamMembers from './TeamMembers';
-import Tabs from './Tabs';
 import { FiMoreVertical } from 'react-icons/fi';
 
 const DashboardHeader = () => {
@@ -28,7 +27,6 @@ const DashboardHeader = () => {
                     </button>
                 </div>
             </div>
-            <Tabs />
         </section>
     );
 };
