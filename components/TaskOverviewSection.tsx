@@ -11,21 +11,10 @@ const TaskOverviewSection: React.FC = () => {
         { title: "Completed Tasks", value: 95, percentage: "+3%", percentageColor: "text-[#378480]" },
         { title: "Pending Tasks", value: 25, percentage: "-2%", percentageColor: "text-[#378480]" },
         { title: "Upcoming Meetings", value: 8, percentage: "+1%", percentageColor: "text-[#378480]" },
-        { title: "Extra Task 1", value: 50, percentage: "+4%", percentageColor: "text-[#378480]" },
-        { title: "Extra Task 2", value: 30, percentage: "-1%", percentageColor: "text-[#378480]" },
-        { title: "Extra Task 2", value: 30, percentage: "-1%", percentageColor: "text-[#378480]" },
-        { title: "Extra Task 2", value: 30, percentage: "-1%", percentageColor: "text-[#378480]" },
-        { title: "Extra Task 2", value: 30, percentage: "-1%", percentageColor: "text-[#378480]" },
-        { title: "Extra Task 2", value: 30, percentage: "-1%", percentageColor: "text-[#378480]" },
-        { title: "Extra Task 2", value: 30, percentage: "-1%", percentageColor: "text-[#378480]" },
-        { title: "Extra Task 2", value: 30, percentage: "-1%", percentageColor: "text-[#378480]" },
-        { title: "Extra Task 2", value: 30, percentage: "-1%", percentageColor: "text-[#378480]" },
-        { title: "Extra Task 2", value: 30, percentage: "-1%", percentageColor: "text-[#378480]" },
     ];
 
     const handleWheel = (api: any, event: React.WheelEvent) => {
         if (event.deltaY !== 0) {
-            event.preventDefault();
             if (event.deltaY > 0) {
                 api.scrollNext(); // Scroll right
             } else {

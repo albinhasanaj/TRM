@@ -2,6 +2,7 @@ import React from 'react';
 import ShareButton from './ShareButton';
 import TeamMembers from './TeamMembers';
 import Tabs from './Tabs';
+import { FiMoreVertical } from 'react-icons/fi';
 
 const DashboardHeader = () => {
     return (
@@ -23,7 +24,7 @@ const DashboardHeader = () => {
                 <div className="flex gap-3">
                     <ShareButton />
                     <button className="p-2 bg-[#fbfdfd] rounded-2xl border border-[#496e6c]/20 flex items-center justify-center">
-                        <div className="w-5 h-5">⋮</div>
+                        <FiMoreVertical className="text-[#1a2727] text-[20px]" />
                     </button>
                 </div>
             </div>
