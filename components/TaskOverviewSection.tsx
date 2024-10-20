@@ -7,10 +7,10 @@ import '@/styles/customScrollStyles.css';
 
 const TaskOverviewSection: React.FC = () => {
     const taskCards = [
-        { title: "Total Tasks", value: 120, percentage: "+5%", percentageColor: "text-[#378480]" },
-        { title: "Completed Tasks", value: 95, percentage: "+3%", percentageColor: "text-[#378480]" },
-        { title: "Pending Tasks", value: 25, percentage: "-2%", percentageColor: "text-[#378480]" },
-        { title: "Upcoming Meetings", value: 8, percentage: "+1%", percentageColor: "text-[#378480]" },
+        { title: "Total Tasks", value: 120, percentage: "+5%", percentageColor: "text-[#2e8540]" },
+        { title: "Completed Tasks", value: 95, percentage: "+3%", percentageColor: "text-[#2e8540]" },
+        { title: "Pending Tasks", value: 25, percentage: "-2%", percentageColor: "text-[#d94e67]" },
+        { title: "Upcoming Meetings", value: 8, percentage: "+1%", percentageColor: "text-[#2e8540]" }
     ];
 
     const handleWheel = (api: any, event: React.WheelEvent) => {
