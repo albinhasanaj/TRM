@@ -28,7 +28,7 @@ const TaskFilterComponent = () => {
 
                 {/* My Tasks */}
                 <div
-                    className="flex items-center gap-3 cursor-pointer w-full md:w-auto md:flex-1 hover:bg-gray-100 px-4 py-2 rounded-lg"
+                    className="flex items-center gap-3 cursor-pointer w-full md:w-auto md:flex-1 hover:bg-gray-100 px-4 py-2 rounded-lg transition"
                     onClick={() => toggleCheckbox('myTasks')}
                 >
                     <div className="w-6 h-6 relative">
@@ -39,7 +39,7 @@ const TaskFilterComponent = () => {
 
                 {/* Completed Tasks */}
                 <div
-                    className="flex items-center gap-3 cursor-pointer w-full md:w-auto md:flex-1 hover:bg-gray-100 px-4 py-2 rounded-lg"
+                    className="flex items-center gap-3 cursor-pointer w-full md:w-auto md:flex-1 hover:bg-gray-100 px-4 py-2 rounded-lg transition"
                     onClick={() => toggleCheckbox('completedTasks')}
                 >
                     <div className="w-6 h-6 relative">
@@ -50,7 +50,7 @@ const TaskFilterComponent = () => {
 
                 {/* Pending Tasks */}
                 <div
-                    className="flex items-center gap-3 cursor-pointer w-full md:w-auto md:flex-1 hover:bg-gray-100 px-4 py-2 rounded-lg"
+                    className="flex items-center gap-3 cursor-pointer w-full md:w-auto md:flex-1 hover:bg-gray-100 px-4 py-2 rounded-lg transition"
                     onClick={() => toggleCheckbox('pendingTasks')}
                 >
                     <div className="w-6 h-6 relative">

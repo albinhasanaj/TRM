@@ -5,6 +5,8 @@ import DashboardContent from '@/components/DashboardContent';  // Import the con
 import Tabs from '@/components/Tabs';
 import TaskFilter from '@/components/TaskFilter';
 import TasksContent from '@/components/TasksContent';
+import MeetingFilter from '@/components/MeetingFilter';
+import MeetingsContent from '@/components/MeetingsContent';
 
 
 const Dashboard: React.FC<{ params: { tab: string } }> = ({ params }) => {
@@ -31,6 +33,14 @@ const Dashboard: React.FC<{ params: { tab: string } }> = ({ params }) => {
                         <TasksContent />
                     </div>
                 )}
+
+                {tab === 'meetings' && (
+                    <div className="flex flex-col gap-2">
+                        <MeetingFilter />
+                        <MeetingsContent />
+                    </div>
+                )}
+
             </section>
         </main>
     );
