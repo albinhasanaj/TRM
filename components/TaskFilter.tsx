@@ -34,7 +34,7 @@ const TaskFilterComponent = () => {
                     <div className="w-6 h-6 relative">
                         {checkedStates.myTasks ? <FiCheckSquare size={24} className="text-green-500" /> : <FiSquare size={24} />}
                     </div>
-                    <span className="text-gray-800 font-medium text-lg">My Tasks</span>
+                    <span className="text-gray-800 font-medium text-lg select-none">My Tasks</span>
                 </div>
 
                 {/* Completed Tasks */}
@@ -45,7 +45,7 @@ const TaskFilterComponent = () => {
                     <div className="w-6 h-6 relative">
                         {checkedStates.completedTasks ? <FiCheckSquare size={24} className="text-green-500" /> : <FiSquare size={24} />}
                     </div>
-                    <span className="text-gray-800 font-medium text-lg">Completed Tasks</span>
+                    <span className="text-gray-800 font-medium text-lg select-none">Completed Tasks</span>
                 </div>
 
                 {/* Pending Tasks */}
@@ -56,7 +56,7 @@ const TaskFilterComponent = () => {
                     <div className="w-6 h-6 relative">
                         {checkedStates.pendingTasks ? <FiCheckSquare size={24} className="text-green-500" /> : <FiSquare size={24} />}
                     </div>
-                    <span className="text-gray-800 font-medium text-lg">Pending Tasks</span>
+                    <span className="text-gray-800 font-medium text-lg select-none">Pending Tasks</span>
                 </div>
 
             </div>
