@@ -1,0 +1,21 @@
+/* Custom scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+    height: 8px;
+    /* Adjust height of scrollbar */
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #30726f;
+    border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+    background: #e6f1f0;
+}
+
+.scrollbar-thin {
+    scrollbar-width: thin;
+    /* For Firefox */
+    scrollbar-color: #30726f #e6f1f0;
+    /* Thumb and track color for Firefox */
+}

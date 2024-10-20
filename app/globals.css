@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.barchart-progress .relative {
+  height: 12px;
+}
