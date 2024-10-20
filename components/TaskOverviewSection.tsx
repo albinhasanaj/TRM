@@ -36,7 +36,7 @@ const TaskOverviewSection: React.FC = () => {
                         value={task.value}
                         percentage={task.percentage}
                         percentageColor={task.percentageColor}
-                        className="mx-2"
+                        className={index === 0 ? "" : "mx-2"}
                         itemId={`task-${index}`}
                     />
                 ))}
