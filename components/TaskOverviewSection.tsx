@@ -25,7 +25,6 @@ const TaskOverviewSection: React.FC = () => {
 
     const handleWheel = (api: any, event: React.WheelEvent) => {
         if (event.deltaY !== 0) {
-            event.preventDefault();
             if (event.deltaY > 0) {
                 api.scrollNext(); // Scroll right
             } else {

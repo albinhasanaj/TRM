@@ -1,24 +1,39 @@
 "use client";
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import Image from 'next/image';
 import { AiOutlineMenu, AiOutlineDown } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
+const logo = true;
+
 const ManagementNavbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
     return (
-        <nav className="h-[72px] py-[18px] bg-[#fbfdfd] justify-between items-center flex w-full">
+        <nav className="py-[18px] bg-[#fbfdfd] justify-between items-center flex w-full">
             {/* Left Section: Logo and Links */}
             <div className="flex justify-start items-center gap-[20px] md:gap-[50px]">
                 <div className="flex items-center gap-1">
-                    <Image src="/images/logo/logo.png" alt="logo" width={28} height={28} />
-                    <div className="text-[#3f9893] text-[24px] md:text-[28px] font-bold font-['Sen'] leading-7">Tachyon</div>
+                    {logo ? (
+                        <Image
+                            src="/images/logo/logo.png"
+                            alt="Logo"
+                            width={40}
+                            height={40}
+                            className="w-[140px] h-auto "
+                            unoptimized={true}
+                        />
+                    ) : (
+                        <Fragment>
+                            <div className="text-[#3f9893] text-[24px] md:text-[28px] font-bold font-['Sen'] leading-7">Tachyon</div>
+                        </Fragment>
+                    )}
                 </div>
 
                 {/* Navbar Links (Desktop View) */}
@@ -61,7 +76,7 @@ const ManagementNavbar = () => {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
-                    className="absolute top-[72px] left-0 w-full bg-[#fbfdfd] shadow-md flex flex-col items-start p-4 gap-4 md:hidden"
+                    className="absolute top-[72px] left-0 w-full bg-[#fbfdfd] shadow-md flex flex-col items-start p-4 gap-4 md:hidden z-50"
                 >
                     <ul className="flex flex-col gap-4">
                         <li className="flex items-center gap-1">
@@ -83,11 +98,9 @@ const ManagementNavbar = () => {
                     </ul>
 
                     {/* Log in and Try it Free for Mobile */}
-                    <div className="w-full border-t mt-4 pt-4 flex flex-col gap-2">
-                        <Link href="#" className="text-[#1a2727] text-[16px] font-medium leading-tight">Log in</Link>
-                        <div className="px-[14px] py-2 bg-[#b7e0de] rounded-xl flex items-center justify-center w-full">
-                            <Link href="#" className="text-[#010303] text-[16px] font-medium leading-tight">Try it free</Link>
-                        </div>
+                    <div className="w-full border-t mt-4 pt-4 flex flex-col gap-6">
+                        <Link href="#login" className="text-[#1a2727] text-[16px] font-medium leading-tight px-[14px] py-2 bg-[#30736F]/10 rounded-xl flex items-center justify-center hover:bg-[#30736F]/20">Log in</Link>
+                        <Link href="#signup" className="text-[#010303] text-[16px] font-medium leading-tight px-[14px] py-2 bg-[#b7e0de]/90 rounded-xl flex items-center justify-center hover:bg-[#b7e0de]">Try it free</Link>
                     </div>
                 </motion.div>
             )}
