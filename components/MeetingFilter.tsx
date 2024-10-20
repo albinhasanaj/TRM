@@ -33,7 +33,7 @@ const MeetingFilter = () => {
                     <div className="w-6 h-6 relative">
                         {checkedStates.upcoming ? <FiCheckSquare size={24} className="text-green-500" /> : <FiSquare size={24} />}
                     </div>
-                    <span className="text-gray-800 font-medium text-lg">Upcoming Meetings</span>
+                    <span className="text-gray-800 font-medium text-lg select-none">Upcoming Meetings</span>
                 </div>
 
                 {/* Past Meetings */}
@@ -44,7 +44,7 @@ const MeetingFilter = () => {
                     <div className="w-6 h-6 relative">
                         {checkedStates.past ? <FiCheckSquare size={24} className="text-green-500" /> : <FiSquare size={24} />}
                     </div>
-                    <span className="text-gray-800 font-medium text-lg">Past Meetings</span>
+                    <span className="text-gray-800 font-medium text-lg select-none">Past Meetings</span>
                 </div>
 
                 {/* Today's Meetings */}
@@ -55,7 +55,7 @@ const MeetingFilter = () => {
                     <div className="w-6 h-6 relative">
                         {checkedStates.today ? <FiCheckSquare size={24} className="text-green-500" /> : <FiSquare size={24} />}
                     </div>
-                    <span className="text-gray-800 font-medium text-lg">Today's Meetings</span>
+                    <span className="text-gray-800 font-medium text-lg select-none">Today's Meetings</span>
                 </div>
             </div>
         </div>
