@@ -14,23 +14,6 @@ const ManagementNavbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState<string | null>(null); // Tracks the open dropdown
 
-    const [activeLink, setActiveLink] = useState<string>('home');
-    const pathname = usePathname();
-    useEffect(() => {
-        if (pathname.includes('/tasks')) {
-            setActiveLink('tasks');
-        }
-        if (pathname.includes('/meetings')) {
-            setActiveLink('meetings');
-        }
-        if (pathname.includes('/reports')) {
-            setActiveLink('reports');
-        }
-
-        // Close mobile menu on route change
-        setIsMobileMenuOpen(false);
-    }
-        , [pathname]);
 
     const userLoggedIn = true;
 
@@ -55,6 +38,12 @@ const ManagementNavbar = () => {
         { name: 'Cancel Meeting', href: '/meetings/cancel' }
     ];
 
+    const dashboardLinks = [
+        { name: 'Home', href: '/dashboard' },
+        { name: 'Customize Dashboard', href: '/dashboard/customize' },
+        { name: 'Other Dashboard Link', href: '/dashboard/other' }
+    ]
+
     return (
         <nav className="py-[18px] bg-[#fbfdfd] justify-between items-center flex w-full">
             {/* Left Section: Logo and Links */}
@@ -77,9 +66,12 @@ const ManagementNavbar = () => {
                 {/* Navbar Links (Desktop View) */}
                 <ul className="hidden md:flex items-start gap-6 md:gap-8">
                     <li>
-                        <Link href="/"
-                            className={`text-[#1a2727] text-[15px] font-medium ${activeLink === 'home' ? 'text-[#3f9893]' : ''}`}
-                        >Home</Link>
+                        <Dropdown
+                            title="Dashboard"
+                            links={dashboardLinks}
+                            isOpen={openDropdown === 'dashboard'}
+                            toggleDropdown={() => handleDropdownToggle('dashboard')}
+                        />
                     </li>
                     <li>
                         <Dropdown
@@ -99,7 +91,7 @@ const ManagementNavbar = () => {
                     </li>
                     <li>
                         <Link href="#"
-                            className={`text-[#1a2727] text-[15px] font-medium ${activeLink === 'reports' ? 'text-[#3f9893]' : ''}`}
+                            className={`text-[#1a2727] text-[15px] font-medium`}
                         >Reports</Link>
                     </li>
                 </ul>
@@ -143,9 +135,18 @@ const ManagementNavbar = () => {
                 >
                     <ul className="flex flex-col gap-4">
                         <li>
-                            <Link href="/dashboard"
-                                className={`text-[#1a2727] text-[16px] font-medium ${activeLink === 'home' ? 'text-[#3f9893]' : ''}`}
-                            >Home</Link>
+                            {/* <Link href="/dashboard"
+                                className={`text-[#1a2727] text-[16px] font-medium ${activeLink === 'dashboard' ? 'text-[#3f9893]' : ''}`}
+                            >dashboard</Link>
+                             */}
+
+                            <Dropdown
+                                title="dashboard"
+                                links={dashboardLinks}
+                                isOpen={openDropdown === 'dashboard'}
+                                toggleDropdown={() => handleDropdownToggle('dashboard')}
+                            />
+
                         </li>
                         <li>
                             <Dropdown
@@ -165,7 +166,7 @@ const ManagementNavbar = () => {
                         </li>
                         <li>
                             <Link href="/reports"
-                                className={`text-[#1a2727] text-[16px] font-medium ${activeLink === 'reports' ? 'text-[#3f9893]' : ''}`}
+                                className={`text-[#1a2727] text-[16px] font-medium `}
                             >Reports</Link>
                         </li>
                     </ul>
